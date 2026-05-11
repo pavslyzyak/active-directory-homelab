@@ -1,0 +1,192 @@
+# Active Directory Lab Notes
+
+## Lab Overview
+
+This lab demonstrates the deployment and configuration of an Active Directory (AD) environment using Windows Server 2022 in Oracle VirtualBox. The environment includes domain promotion, Organizational Unit (OU) structure creation, user and group management, workstation integration, and Group Policy Management.
+
+---
+
+# 1. Initial Windows Server Configuration
+
+A Windows Server 2022 virtual machine was deployed in Oracle VirtualBox and configured as the primary domain controller (DC01).
+
+Tasks completed:
+
+* Installed Windows Server 2022 Standard Evaluation
+* Configured hostname as `DC01`
+* Enabled remote management
+* Prepared the server for Active Directory Domain Services (AD DS) installation
+
+Purpose:
+This establishes the foundational infrastructure required for Active Directory deployment.
+
+---
+
+# 2. Active Directory Domain Services Installation
+
+The Active Directory Domain Services role was installed through Server Manager.
+
+Tasks completed:
+
+* Added the AD DS role
+* Opened the Active Directory Domain Services Configuration Wizard
+* Prepared the server for domain promotion
+
+Purpose:
+AD DS enables centralized authentication, authorization, and directory management across the network.
+
+---
+
+# 3. Domain Controller Promotion
+
+The server was promoted to a domain controller by creating a new Active Directory forest.
+
+Domain details:
+
+* Domain Name: `pavlab.local`
+* NetBIOS Name: `PAVLAB`
+
+Purpose:
+Promoting the server creates the Active Directory forest and establishes centralized domain management.
+
+---
+
+# 4. Organizational Unit (OU) Structure Creation
+
+Custom Organizational Units were created to logically separate users, devices, and departments.
+
+OUs created:
+
+* HR
+* IT
+* Workstations
+* Disabled Users
+
+Purpose:
+OUs improve administration, delegation, scalability, and Group Policy targeting.
+
+---
+
+# 5. User Account Creation
+
+Multiple domain user accounts were created inside Active Directory Users and Computers (ADUC).
+
+Accounts created:
+
+* John JS. Smith
+* Martin MB. Brown
+
+User configuration included:
+
+* Logon names
+* User Principal Names (UPN)
+* Pre-Windows 2000 logon names
+* Password policies
+
+Purpose:
+User accounts allow centralized authentication and access management across the domain.
+
+---
+
+# 6. Security Group Creation
+
+A security group named `IT-Support` was created.
+
+Tasks completed:
+
+* Added users into the group
+* Verified group membership
+* Confirmed disabled users still remained listed within the security group
+
+Purpose:
+Security groups simplify permissions management and role-based access control (RBAC).
+
+---
+
+# 7. Password Reset and Account Management
+
+Administrative account management tasks were performed.
+
+Tasks completed:
+
+* Reset user passwords
+* Forced password change at next logon
+* Disabled a user account
+* Verified account disable status
+
+Purpose:
+These actions demonstrate common identity and access management procedures used in enterprise environments.
+
+---
+
+# 8. Workstation Domain Join
+
+A Windows 11 client machine was joined to the domain.
+
+Tasks completed:
+
+* Connected workstation to `pavlab.local`
+* Verified workstation object creation in Active Directory
+* Confirmed workstation placement inside the `Workstations` OU
+
+Purpose:
+Joining devices to the domain enables centralized authentication, policy management, and device administration.
+
+---
+
+# 9. Group Policy Management
+
+Group Policy Management Console (GPMC) was opened and verified.
+
+Tasks completed:
+
+* Accessed Group Policy Management
+* Confirmed forest and domain visibility
+* Verified Group Policy infrastructure availability
+
+Purpose:
+Group Policy enables centralized configuration and security policy enforcement across users and computers.
+
+---
+
+# 10. PowerShell Enumeration and Verification
+
+PowerShell commands were used to enumerate and verify Active Directory objects.
+
+Tasks completed:
+
+* Retrieved domain configuration information
+* Verified domain functional level
+* Enumerated user account details
+* Verified enabled and disabled account states
+
+Purpose:
+PowerShell provides scalable administrative control and automation capabilities for enterprise environments.
+
+---
+
+# Key Technologies Used
+
+* Windows Server 2022
+* Active Directory Domain Services (AD DS)
+* Group Policy Management (GPMC)
+* PowerShell
+* Oracle VirtualBox
+* Windows 11 Client
+* Active Directory Users and Computers (ADUC)
+
+---
+
+# Skills Demonstrated
+
+* Active Directory deployment
+* Domain controller configuration
+* User and group management
+* Organizational Unit administration
+* Identity and Access Management (IAM)
+* Password and account administration
+* Group Policy Management
+* Domain workstation integration
+* PowerShell administration
+* Windows Server management
+* Virtualization using Oracle VirtualBox
